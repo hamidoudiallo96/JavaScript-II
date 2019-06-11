@@ -14,25 +14,62 @@ let sum = () => {
 
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+let counter =( function() {
   // Return a function that when invoked increments and returns a counter variable.
     let counter_num = 0;
-    let new_func= () => {
-        return counter_num=+1;
+    function increase(val) {
+        return counter_num=+val;
     };
-        let new_func_2 = () => {
-            return counter_num = +1
-        };
-};
-let func_call = counter()();
-console.log(func_call());
+    return{
+        increment: function(){
+            increase(1)
+        },
+        increment: function(){
+            increase(2)
+        },
+
+        value: function increase(){
+            return counter_num;
+        }
+    }
+})();
+
+console.log(counter.value());
+counter.increment();
+counter.increment();
+console.log(counter.value());
+counter.increment()
+counter.increment()
+console.log(counter.value());
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
-const counterFactory = () => {
+
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-};
+        const counterFactory = () => {
+        function increase(val) {
+            return counter_num=+val;
+        };
+        return{
+            increment: function(){
+                increase(1)
+            },
+            increment: function(){
+                increase(2)
+            },
+
+            decrement: function(){
+                increase(-2);
+            };
+
+            value: function increase(){
+                return counter_num;
+            }
+        }
+    })();
+
