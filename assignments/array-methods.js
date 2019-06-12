@@ -111,6 +111,32 @@ let sm_shirt = runners.filter(function(char){
 console.log(select_shirt);
 
 // Problem 2
-let = [];
+// collecting donations of of individuals who are apart of the Skinix company:
+let select_company = [];
+let new_comp = runners.filter(function(work){
+    if(work.company_name === 'Skinix'){
+        select_company.push(work.donation)
+    }
+
+});
+console.log(select_company);
+// Total donations of Skinix company
+console.log(select_company.reduce((acc,cur) => acc+=cur));
 
 // Problem 3
+// If you have a Xl size shirt you get an alert
+
+let xl_shirts = [];
+runners.filter(function(size){
+    if((size.shirt_size !== 'S') || (size.shirt_size !== 'M') || (size.shirt_size !== 'L')){
+        xl_shirts.push(`${size.first_name} ${size.last_name}`);
+    }
+});
+
+console.log(xl_shirts);
+
+let bad_news = xl_shirts.forEach(function(name){
+    return window.alert(`Hello ${name}, we are sorry to inform you that we do not have any XL+ shirts at the moment.`)
+});
+
+console.log(bad_news)
